@@ -1,0 +1,24 @@
+rule,rows_before,rows_after,dropped,changed,restored,description
+raw_rows_loaded,9686,9686,0,0,0,raw rows from the three exports
+rest_timer_saved_as_set,9686,7524,2162,0,0,"src2 'Rest Timer' pseudo rows (weight 0, reps 0), not sets"
+same_workout_in_two_apps,7524,7523,1,0,0,smaller of two sessions from different apps (+-1 day) sharing >= half of its sets
+test_entry_before_current_app,7523,7517,6,0,0,src2 rows before its first real session 2025-07-27 (app test entries)
+time_or_distance_only,7517,7262,255,0,0,"src1 rows with time/distance and no weight (stretches, sprints, holds)"
+bodyweight_in_weight_field,7262,6881,381,0,0,pull-up/dip/pushup rows where the weight field is bodyweight (+added); bodyweight stays out
+marked_warmup,6881,6875,6,0,0,"sets marked warmup (src2 W, src3 warmup)"
+missing_weight,6875,6824,51,0,0,no weight (unweighted bodyweight sets)
+placeholder_weight,6824,6662,162,0,0,weight <= 3 lb (0 or placeholder values)
+missing_reps,6662,6662,0,0,0,reps missing or 0
+kg_export_converted_to_lb,6662,6662,0,4426,0,src1 and src3 are kg -> x2.20462; src2 export already lb
+rounded_lb_value_fixed,6662,6662,0,1140,0,src3 values that were typed in lb come back as x.99/x.01 -> snapped to 0.5 lb
+kg_typed_in_lb_field,6662,6662,0,57,0,src2 raw numbers in the two kg eras that are 0.36-0.57x the recent median of the lift and x2.2 lands near it -> multiplied by 2.20462
+typo_above_3x_earlier_max,6662,6661,1,0,0,"set weight > 3x max of the lift in earlier sessions (last 180 d, >= 2 sessions), isolated sets only"
+typo_above_3x_session_median,6661,6661,0,0,0,set weight > 3x median of the other sets of that lift in the same session
+typo_below_quarter_session_top,6661,6661,0,0,0,set weight < 1/4 of the session top for that lift
+more_than_30_reps,6661,6658,3,0,0,reps > 30 treated as typo
+sudden_jump_vs_recent_sessions,6658,6435,223,0,0,"session top weight < 0.58x or > 1.7x the median top of the last 5 earlier sessions of the lift (<= 365 d); unresolved scale jump, dropped as a likely entry error"
+flag_dumbbell_pair_or_single_unclear,6435,6435,0,608,0,"dumbbell lifts where apps disagree on per-dumbbell vs pair weight (kept, flagged)"
+flag_added_load_only,6435,6435,0,332,0,"weighted pull-up/dip/back ext: weight = added load only (kept, flagged)"
+flag_kg_not_checkable,6435,6435,0,114,0,"src2 raw number in a kg era with no history to check the unit (kept, flagged)"
+flag_after_long_break,6435,6435,0,35,0,"first session after a > 30 day break (kept, flagged)"
+flag_uncertain_exercise_name,6435,6435,0,2536,0,"exercise name mapping is low confidence (kept, flagged)"

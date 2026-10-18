@@ -1,0 +1,4 @@
+made_at,exercise,weight_lb,weight_kg,last_session,last_session_sets,set,n_earlier_sets_session,days_since_ex,days_since_any,rf,hgb,repeat_last,status
+2026-10-17T19:02:54-07:00,Bicep Curl (Machine),110.0,49.9,2026-10-03,110x9 110x5,1,0,14,9,9.17,9.4,7.0,active
+2026-10-17T19:02:54-07:00,Bicep Curl (Machine),110.0,49.9,2026-10-03,110x9 110x5,2,1,14,9,7.95,8.09,7.0,active
+2026-10-17T19:02:54-07:00,Bicep Curl (Machine),110.0,49.9,2026-10-03,110x9 110x5,3,2,14,9,7.79,7.78,7.0,active

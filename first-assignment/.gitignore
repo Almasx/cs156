@@ -1,0 +1,5 @@
+__pycache__/
+.ipynb_checkpoints/
+rerun.ipynb
+demo/predictions_rerun.csv
+*.mov

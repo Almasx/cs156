@@ -1,0 +1,2 @@
+# rows to restore after reviewing data/dropped.csv by hand. dev rows only (date < 2026-07-05), and only for the rules typo_above_3x_earlier_max, typo_above_3x_session_median, typo_below_quarter_session_top, more_than_30_reps and sudden_jump_vs_recent_sessions
+source,src_row,note
